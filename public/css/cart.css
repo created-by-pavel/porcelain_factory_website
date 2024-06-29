@@ -215,6 +215,7 @@ form *{
     height: 40px;
     font-size: 14px;
     border-bottom: 1px solid #000;
+    -webkit-appearance: none;
 }
 
 form button {
@@ -275,6 +276,7 @@ form button:hover {
     .item {
         font-size: 15px;
         padding-right: 0;
+        height: auto;
     }
 
     .back-link a {
@@ -295,11 +297,17 @@ form button:hover {
         padding-bottom: 2vh;
     }
 
-    .contacts-info p:last-child {
-        border-bottom: 0;
+    footer {
+        margin-top: 35px;
     }
 
     .contacts-info {
-        margin-top: 4.5vh;
+        display: block;
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
+    .contacts-info p:last-child {
+        border-bottom: 0;
     }
 }

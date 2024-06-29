@@ -77,6 +77,10 @@ header {
     overflow-x: auto;
 }
 
+.category-select {
+    color: #DF5454;
+}
+
 .select-block {
     display: flex;
 }
@@ -165,8 +169,14 @@ footer {
         font-size: 14px;
     }
 
+    footer {
+        margin-top: 35px;
+    }
+
     .contacts-info {
         display: block;
+        margin-top: 0;
+        padding-bottom: 0;
     }
 
     .contacts-info p {

@@ -1,9 +1,10 @@
-
-let loadTl = gsap.timeline();
-loadTl.from(".title h1", {opacity: 0, y: "3rem", duration: 1});
+// GSAP анимация
+const loadTl = gsap.timeline();
+loadTl.from(".title h1", { opacity: 0, y: "3rem", duration: 1.5 });
 
 let currentIndex = 0;
 
+// Функция для смены слайда
 function changeSlide() {
     const slides = document.querySelector('.slides');
     const totalSlides = document.querySelectorAll('.slide').length;
@@ -12,67 +13,73 @@ function changeSlide() {
     slides.style.transform = `translateX(${offset}%)`;
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    const profileLink = document.getElementById('profile-link');
+// Функция для закрытия popup при клике вне области
+function closePopupOnClickOutside(e) {
     const loginPopup = document.getElementById('login-popup');
     const registerPopup = document.getElementById('register-popup');
+    if (e.target === loginPopup) {
+        loginPopup.style.display = 'none';
+    }
+    if (e.target === registerPopup) {
+        registerPopup.style.display = 'none';
+    }
+}
+
+// Функция для переключения меню
+function toggleMenu() {
+    const menuContainer = document.getElementById('menu-container');
+    const menuToggle = document.getElementById('menu-toggle');
+    menuContainer.classList.toggle('active');
+    menuToggle.innerHTML = menuContainer.classList.contains('active') ? '&#10006;' : '&#9776;';
+}
+
+// Функция для открытия popup входа
+function openLoginPopup(e) {
+    e.preventDefault();
+    const loginPopup = document.getElementById('login-popup');
+    const menuContainer = document.getElementById('menu-container');
+    const menuToggle = document.getElementById('menu-toggle');
+    loginPopup.style.display = 'block';
+    menuContainer.classList.remove('active');
+    menuToggle.innerHTML = '&#9776;';
+}
+
+// Функция для переключения между popup окнами
+function togglePopup(e, fromPopupId, toPopupId) {
+    e.preventDefault();
+    document.getElementById(fromPopupId).style.display = 'none';
+    document.getElementById(toPopupId).style.display = 'block';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const profileLink = document.getElementById('profile-link');
     const showRegisterLink = document.getElementById('show-register');
     const showLoginLink = document.getElementById('show-login');
     const popupContents = document.querySelectorAll('.popup-content');
+    const arrowDown = document.querySelector('.arrow-down');
     const menuToggle = document.getElementById('menu-toggle');
-    const menuContainer = document.getElementById('menu-container');
 
     setInterval(changeSlide, 6000);
 
-    menuToggle.addEventListener('click', function () {
-        menuContainer.classList.toggle('active');
-        if (menuToggle.innerHTML === '☰') {
-            menuToggle.innerHTML = '&#10006;';
-        } else {
-            menuToggle.innerHTML = '☰';
-        }
-    });
+    menuToggle.addEventListener('click', toggleMenu);
 
-    profileLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        loginPopup.style.display = 'block';
-        menuContainer.classList.remove('active');
-        // Ensure the menuToggle button content is reset
-        menuToggle.innerHTML = '☰';
-    });
+    profileLink.addEventListener('click', openLoginPopup);
 
-    window.addEventListener('click', (e) => {
-        if (e.target == loginPopup) {
-            loginPopup.style.display = 'none';
-        }
-        if (e.target == registerPopup) {
-            registerPopup.style.display = 'none';
-        }
-    });
+    window.addEventListener('click', closePopupOnClickOutside);
+    window.addEventListener('touchstart', closePopupOnClickOutside);
 
-    showRegisterLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        loginPopup.style.display = 'none';
-        registerPopup.style.display = 'block';
-    });
+    showRegisterLink.addEventListener('click', (e) => togglePopup(e, 'login-popup', 'register-popup'));
 
-    showLoginLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        registerPopup.style.display = 'none';
-        loginPopup.style.display = 'block';
-    });
+    showLoginLink.addEventListener('click', (e) => togglePopup(e, 'register-popup', 'login-popup'));
 
     popupContents.forEach(content => {
-        content.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
+        content.addEventListener('click', (e) => e.stopPropagation());
     });
-});
 
-const arrowDown = document.querySelector('.arrow-down');
-arrowDown.addEventListener('click', function() {
-    window.scrollBy({
-        top: 500,
-        behavior: 'smooth'
+    arrowDown.addEventListener('click', () => {
+        window.scrollBy({
+            top: 500,
+            behavior: 'smooth'
+        });
     });
 });
