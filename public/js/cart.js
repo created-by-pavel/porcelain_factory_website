@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data.products = cartStorage.map(product => JSON.parse(product));
         data.total = total;
 
-        fetch('http://localhost:81/mail/send/order', {
+        fetch('https://porcelain-factory-website.onrender.com/mail/send/order', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
