@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Речицкий фарфоровый завод</title>
+    <link rel="stylesheet" href="/css/item.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" defer></script>
+    <script src="/js/item.js" defer></script>
+    <!--    <meta name="description" content="created-by-pavel. The official website of created-by-pavel. EST 2024. SPB"/>-->
+    <!--    <meta name="google" content="notranslate"/>-->
+    <!--    <meta name="keywords" content="created-by-pavel, clothes, store, shop, online store, buy clothes, stylish clothes"/>-->
+</head>
+<body>
+<header>
+    <div class="back-link">
+        <a href="http://localhost:81">ВЕРНУТЬСЯ НА ГЛАВНУЮ</a>
+    </div>
+    <div class="product-category delete">{{this.category.name}} / КАТЕГОРИИ</div>
+</header>
+<main class="main">
+    <div class="title delete"><b>{{this.category.name}}.</b></div>
+    <div class="product-img" id="product-img"><img src="{{this.imageUrl}}"></div>
+</main>
+<div class="bottom">
+    <div class="product-price" id="product-price">{{this.price}} &#8381;</div>
+    <div class="product-name" id="product-name">{{this.title.name}} / {{this.classification}}</div>
+    <button class="add-to-cart-button" id="add-to-cart-button">ДОБАВИТЬ В КОРЗИНУ</button>
+</div>
+<footer>
+    <div class="links">
+        <a href="https://vk.com/public216071530">VK&nbsp;</a>
+        <a href="https://t.me/rfz1858">TG</a>
+    </div>
+</footer>
+<div id="popup" class="popup">
+    <div class="popup-body">
+        <div class="popup-content">
+            <div class="popup-icon"></div>
+            <div class="popup-title">успешно</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

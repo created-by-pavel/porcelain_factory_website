@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Речицкий фарфоровый завод. Официальный сайт.</title>
+    <link rel="stylesheet" href="/css/index2.css" type="text/css"/>
+    <link rel="icon" href="/img/logo.jpg" type="image/jpeg" sizes="32x32">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@805&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" defer></script>
+    <script src="/js/index.js" defer></script>
+    <!--    <meta name="description" content="created-by-pavel. The official website of created-by-pavel. EST 2024. SPB"/>-->
+    <!--    <meta name="google" content="notranslate"/>-->
+    <!--    <meta name="keywords" content="created-by-pavel, clothes, store, shop, online store, buy clothes, stylish clothes"/>-->
+</head>
+
+<body>
+<div class="header">
+    <div class="menu">
+        <div class="logo"><img src="/img/logo.jpg" width="70px"></div>
+        <div class="horizontal_line"></div>
+        <button id="menu-toggle">☰</button>
+        <menu id="menu-container">
+            <li class="nav-item"><a href="#about" class="nav-link">о нас</a></li>
+            <li class="nav-item"><a href="http://localhost:81/products/category/1" class="nav-link">каталог</a></li>
+            <li class="nav-item"><a href="http://localhost:81/documents" class="nav-link">документы</a></li>
+            <li class="nav-item"><a href="http://localhost:81/contacts" class="nav-link">контакты</a></li>
+            <li id="profile-li" class="nav-item"><a id="profile-link" href="http://localhost:81/login" class="nav-link">профиль</a>
+            </li>
+            <li class="nav-item"><a href="http://localhost:81/cart" class="nav-link">
+                <img src="/img/cart.png" width="30px"></a>
+            </li>
+        </menu>
+        <div id="login-popup" class="popup">
+            <div class="popup-content">
+                <div class="left-block">
+                    <div class="popup-title">Добро пожаловать !</div>
+                    <div class="popup-img"><img src="/img/mockup1.png"></div>
+                    <div class="register-link">Еще не зарегистрированы? <a id="show-register"
+                                                                           href="http://localhost:81"><b>Сделайте это
+                        сейчас</b></a></div>
+                </div>
+                <div class="right-block">
+                    <form id="login-form"><b>Логин</b>
+                        <div class="form-group">
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email" name="email" required placeholder="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">ПАРОЛЬ</label>
+                            <input type="password" id="password" name="password" required placeholder="пароль">
+                        </div>
+                        <button type="submit">Войти</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="register-popup" class="popup">
+            <div class="popup-content">
+                <div class="left-block">
+                    <div class="popup-title">Добро пожаловать !</div>
+                    <div class="popup-img"><img src="/img/mockup1.png"></div>
+                    <div class="register-link">Уже зарегистрированы? <a id="show-login" href="http://localhost:81"><b>Войдите
+                        в аккаунт</b></a></div>
+                </div>
+                <div class="right-block">
+                    <form id="login-form"><b>Зарегистриуйтесь</b>
+                        <div class="form-group">
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email" name="email" required placeholder="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">ПАРОЛЬ</label>
+                            <input type="password" id="password" name="password" required placeholder="пароль">
+                        </div>
+                        <div class="form-group">ИМЯ
+                            <label for="name"></label>
+                            <input type="text" id="name" name="name" required placeholder="имя">
+                        </div>
+                        <div class="form-group">ФАМИЛИЯ
+                            <label for="surname"></label>
+                            <input type="text" id="surname" name="surname" required placeholder="фамилия">
+                        </div>
+                        <div class="form-group">НОМЕР
+                            <label for="number"></label>
+                            <input type="text" id="number" name="number" required placeholder="номер">
+                        </div>
+                        <button type="submit">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="title-block">
+        <div class="title-wrapper">
+            <div class="title">
+                <h1><b>РЕЧИЦКИЙ ФАРФОРОВЫЙ<br>ЗАВОД</b></h1>
+                <div class="title-text">
+                    <p>Движимые страстью, обладающие</p>
+                    <p>компетенцией; наша команда - сердце</p>
+                    <p>иноваций, воплощаем фарфоровые</p>
+                    <p>мечты в реальность.</p>
+                </div>
+            </div>
+        </div>
+        <div class="arrow-down">
+            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L12 19.5L19 13" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+                <path d="M12 19V3" stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+            </svg>
+        </div>
+    </div>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="img/slider3.jpg"></div>
+            <div class="slide"><img src="img/slider4.jpg"></div>
+            <div class="slide"><img src="img/cups.jpg"></div>
+        </div>
+    </div>
+</div>
+<main class="main">
+    <div id="about">
+        <div class="row">
+            <div class="about-flex-item-1 delete"></div>
+            <div class="about-flex-item-2"><b>О НАС</b></div>
+            <div class="about-flex-item-3 delete"></div>
+            <div class="about-flex-item-4">
+                <div class="circle">
+                    <svg viewBox="0 0 100 100" width="130" height="130">
+                        <defs>
+                            <path id="figure"
+                                  d="M 50, 50
+                                  m -37, 0
+                                  a 37,37 0 1,1 74,0
+                                  a 37,37 0 1,1 -74,0"/>
+                        </defs>
+                        <text font-size="12">
+                            <textPath xlink:href="#figure">
+                                фарфор с историей / фарфор с душой /
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="about-flex-item-long-image"><img src="/img/about2.jpg" width="100%" height="100%"/></div>
+            <div class="about-flex-item update-text">
+                <p><span>В 60 км от Москвы расположено</span> село Гжель, давшее название промыслу.</span>
+                    Речицкий завод по производству фарфоровой аппаратуры является одним из старейших промышленных
+                    предприятий Гжели.</p>
+            </div>
+            <div class="about-flex-item delete"></div>
+        </div>
+
+        <div class="row">
+            <div class="about-flex-item delete"><img src="/img/about4.jpg" width="100%" height="100%"/></div>
+            <div class="about-flex-item delete">
+                <p>В 60 км от Москвы расположено село Гжель, давшее название промыслу.
+                    Речицкий завод по производству фарфоровой</p>
+            </div>
+            <div class="about-flex-item-long-image"><img src="/img/about1.jpg" width="100%" height="100%"/></div>
+        </div>
+
+        <div class="row">
+            <div class="about-flex-item delete"></div>
+            <div class="about-flex-item delete"><img src="/img/about10.png" width="100%" height="100%"/></div>
+            <div class="about-flex-item delete">
+                <p>В 60 км от Москвы расположено село Гжель, давшее название промыслу.
+                    Речицкий завод по производству фарфоровой</p>
+            </div>
+            <div class="about-flex-item delete"></div>
+        </div>
+
+        <div class="row">
+            <div class="about-flex-item delete"></div>
+            <div class="about-flex-item">
+                <p><span>В 60 км от Москвы расположено</span> село Гжель, давшее название промыслу.
+                    Речицкий завод по производству фарфоровой В 60 км от Москвы расположено село Гжель, давшее название
+                    промыслу.</p>
+            </div>
+            <div class="about-flex-item-long-image"><img src="/img/about3.jpg" width="100%" height="100%"/></div>
+        </div>
+    </div>
+</main>
+<div class="catalog-block">
+    <div class="catalog-title">
+        <b>НОВАЯ КОЛЛЕКЦИЯ</b>
+        <b>НОВАЯ КОЛЛЕКЦИЯ</b>
+    </div>
+    <div class="catalog">
+        <div class="catalog-link"><a href="http://localhost:81/products/category/1">НОВЫЙ&nbsp;</a></div>
+        <div class="catalog-link"><a href="http://localhost:81/products/category/1"><img src="/img/cups.jpg"></a></div>
+        <div class="catalog-link"><a href="http://localhost:81/products/category/1">&nbsp;АССОРТИМЕНТ &#8594;</a></div>
+    </div>
+</div>
+<div class="photos">
+    <div class="row">
+        <div class="photo1 delete"></div>
+        <div class="photo2"></div>
+        <div class="photo3">
+            <div class="year">
+                <b>1988</b>
+            </div>
+        </div>
+        <div class="photo4 delete"></div>
+    </div>
+    <div class="row">
+        <div class="photo5">
+            <div class="star">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 145 147" fill="none">
+                    <path d="M80 146.4L66.8 96.9L38 137.7L7.69995 113.7L47.8999 77.4L0.199951 63.9L12.7999 29.1L62.2999 54.6L67.1 0.599976L104.6 8.09997L88.0999 59.7L144.8 55.5L142.1 92.7L92.6 86.4L116 135.6L80 146.4Z"
+                          fill="#DF5454"/>
+                </svg>
+            </div>
+            <p><b>Дата</b></p>
+        </div>
+        <div class="photo6 delete"></div>
+        <div class="photo7 delete"><b>Основания</b></div>
+    </div>
+</div>
+<div class="presentation-wrapper">
+    <div class="link">
+    <a href="https://drive.google.com/file/d/1WefwpPP6CP_4rVl9JBG3EX94FXWB61Io/view?usp=sharing">
+    <p>СМОТРИТЕ</p>
+    <p>НАШУ</p>
+    <p>ПРЕЗЕНТАЦИЮ</p>
+    <p>→</p>
+    </a>
+    </div>
+    <div class="stone-img">
+        <img src="/img/stone.png">
+    </div>
+</div>
+<div class="logo-scroller-block">
+    <div class="logo-scroller">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+        <img src="/img/logo.jpg">
+    </div>
+</div>
+<footer class="footer">
+    <div class="row">
+        <div class="footer-flex-item">
+            <p>СЛЕДИТЕ ЗА НАМИ&nbsp;</p>
+            <a href="https://vk.com/public216071530">&nbsp;VK&nbsp;</a>
+            <a href="https://t.me/rfz1858">&nbsp;TG</a>
+        </div>
+        <div class="footer-flex-item"></div>
+        <div class="footer-flex-item"></div>
+        <div class="footer-flex-item"></div>
+    </div>
+    <div class="row">
+        <div class="footer-flex-item">ⓒ 2024</div>
+        <div class="footer-flex-item">rfz@rfz.ru<br>+7 (499) 348-84-85</div>
+        <div class="footer-flex-item">Понедельник - Пятница<br>9:00 - 18:00</div>
+        <div class="footer-flex-item">140145, Московская обл.,<br>Раменский район, с.Речицы,<br>ул. Центральная, 2Б
+        </div>
+    </div>
+</footer>
+</body>
+</html>

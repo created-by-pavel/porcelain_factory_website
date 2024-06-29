@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Речицкий фарфоровый завод</title>
+    <link rel="stylesheet" href="/css/contacts.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap"
+          rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" defer></script>
+    <script src="/js/contacts.js" defer></script>
+    <!--    <meta name="description" content="created-by-pavel. The official website of created-by-pavel. EST 2024. SPB"/>-->
+    <!--    <meta name="google" content="notranslate"/>-->
+    <!--    <meta name="keywords" content="created-by-pavel, clothes, store, shop, online store, buy clothes, stylish clothes"/>-->
+</head>
+<body>
+<header>
+    <div id="img-block">
+        <img src="/img/slider.jpg" width="100%">
+    </div>
+    <div class="back-link">
+        <a href="http://localhost:81">ВЕРНУТЬСЯ НА ГЛАВНУЮ</a>
+        <hr>
+    </div>
+</header>
+<main class="main">
+    <div class="title">
+        <b>Свяжитесь с нами</b>
+    </div>
+    <div id="form-container" class="form-container">
+        <form action="/submit" method="POST">
+            <div class="inline-group">
+                <div class="form-group">
+                    <label for="name"></label>
+                    <input type="text" id="name" name="name" required placeholder="имя">
+                </div>
+                <div class="form-group">
+                    <label for="surname"></label>
+                    <input type="text" id="surname" name="surname" required placeholder="фамилия">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email"></label>
+                <input type="email" id="email" name="email" required placeholder="email">
+            </div>
+            <div class="form-group">
+                <label for="number"></label>
+                <input type="text" id="number" name="number" required placeholder="номер">
+            </div>
+            <div class="form-group">
+                <label for="message"></label>
+                <textarea id="message" name="message" required placeholder="текст"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+    <div class="contacts">
+        <div class="left-info">
+            <div class="info-block">
+                <p><b>Москва</b></p>
+            </div>
+        </div>
+        <div class="right-info">
+            <div class="info-block">
+                <p>rfz@rfz.ru</p>
+                <p>+7 (499) 348-84-85</p>
+            </div>
+            <div class="info-block">
+                <p>140145, Московская обл., Раменский</p>
+                <p>район, с.Речицы, ул. Центральная, 2Б</p>
+            </div>
+            <div class="info-block">
+                <p>Понедельник - Пятница</p>
+                <p>9:00 - 18:00</p>
+            </div>
+        </div>
+    </div>
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2254.0752102084443!2d38.460654376709826!3d55.60070470369616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414ae96230ade039%3A0x384564eab06840e!2z0KDQtdGH0LjRhtC60LjQuSDQpNCw0YDRhNC-0YDQvtCy0YvQuSDQl9Cw0LLQvtC0INCe0JDQng!5e0!3m2!1sru!2sru!4v1717595052141!5m2!1sru!2sru"
+                width="70%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</main>
+<footer>
+    <div class="policy">ⓒ 2024</div>
+    <div class="links">
+        <a href="https://vk.com/public216071530">VK&nbsp;</a>
+        <a href="https://t.me/rfz1858">TG</a>
+    </div>
+    <div class="move-top-button">
+        &#8593; <a href="#img-block">Вернуться наверх</a>
+    </div>
+</footer>
+</body>
+</html>

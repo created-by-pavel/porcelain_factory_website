@@ -1,0 +1,32 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://factory_ctm1_user:b38ayJDyS6BswAHHjvBPvOGDwJfCtkcp@dpg-cpursr08fa8c73fpla30-a.frankfurt-postgres.render.com/factory_ctm1"
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "darwin-arm64"]
+}
+
+model Product {
+  id             Int          @id @default(autoincrement())
+  classification String
+  price          Float
+  category       Category?    @relation(fields: [categoryId], references: [id])
+  categoryId     Int?
+  imageUrl       String
+  titleId        Int
+  title          ProductTitle @relation(fields: [titleId], references: [id])
+}
+
+model ProductTitle {
+  id       Int       @id @default(autoincrement())
+  name     String
+  products Product[]
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String
+  products Product[]
+}

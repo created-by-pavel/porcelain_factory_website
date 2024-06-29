@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #fff;
+    height: 100%;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    padding: 10px 35px;
+}
+
+a, li {
+    text-decoration: none;
+    color: #000;
+    list-style: none;
+}
+main {
+    display: flex;
+}
+
+.left-block {
+    justify-self: left;
+    flex: 1;
+}
+
+.right-block {
+    justify-self: right;
+    flex: 1;
+}

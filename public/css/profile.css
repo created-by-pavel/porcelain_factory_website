@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #fff;
+    height: 100%;
+    font-family: 'Open Sans';
+    font-size: clamp(16px, 1.2vw, 19px);
+}
+
+body {
+    padding: 10px 35px;
+}
+
+a, li {
+    text-decoration: none;
+    color: #000;
+    list-style: none;
+}
+
+.title {
+    font-size: clamp(18px, 1rem + 0.83vw, 30px);
+}
+
+.desc {
+    margin-top: 70px;
+    font-size: clamp(1.5rem, 1rem + 1.3vw, 4.6rem);
+}
+
+.title hr {
+    height: 2px;
+    width: 75px;
+    background-color: black;
+    margin-top: 15px;
+}
+
+.log-out {
+    font-size: 18px;
+    display: flex;
+    justify-content: right;
+    flex: 1;
+}
+
+.log-out a {
+    color: #939393;
+}
+
+.profile-container {
+    margin-top: 70px;
+    width: 35%;
+}
+
+.orders-link-container {
+    margin-top: 25px;
+    display: flex;
+}
+
+.profile-info {
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.profile-block {
+    border-bottom: 1px solid #000000;
+}
+
+.label {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #939393;
+}
+
+.inline-container {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.back-link a, .left-block a {
+    color: #DF5454;
+    text-decoration: underline;
+}
+
+.back-link {
+    margin-top: 100px;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+.links {
+    border-bottom: 2px solid #000;
+    padding-bottom: 35px;
+}
+
+.contacts-info {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+
+.contacts-info p {
+    align-self: end;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        padding: 10px 10px;
+    }
+
+    .desc {
+        margin-top: 50px;
+    }
+
+    .profile-container {
+        width: 100%;
+    }
+
+    .log-out {
+        margin-top: 25px;
+        justify-content: left;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .back-link a {
+        font-size: 14px;
+    }
+
+    .contacts-info {
+        display: block;
+    }
+
+    .contacts-info p {
+        padding-bottom: 2vh;
+        margin-top: 20px;
+        border-bottom: 2px solid #000000;
+    }
+
+    .links {
+        padding-bottom: 2vh;
+    }
+
+    .contacts-info p:last-child {
+        border-bottom: 0;
+    }
+}

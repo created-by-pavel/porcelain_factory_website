@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Речицкий фарфоровый завод</title>
+    <link rel="stylesheet" href="/css/cart.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap"
+          rel="stylesheet">
+    <script src="/js/cart.js" defer></script>
+    <!--    <meta name="description" content="created-by-pavel. The official website of created-by-pavel. EST 2024. SPB"/>-->
+    <!--    <meta name="google" content="notranslate"/>-->
+    <!--    <meta name="keywords" content="created-by-pavel, clothes, store, shop, online store, buy clothes, stylish clothes"/>-->
+</head>
+<body>
+<header>
+    <div class="title">
+        корзина
+        <hr>
+    </div>
+</header>
+<main class="main">
+    <div class="left-block">
+        нажмите <span>оформить</span> и мы <br> с вами свяжемся
+    </div>
+    <div class="right-block">
+        <span>Добавленное</span>
+        <div class="cart-container">
+            <div class="items" id="items"></div>
+            <div class="cart-bottom">
+                <div class="total-price" id="total-price"></div>
+                <div class="submit-button">оформить</div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="back-link">
+    <a href="http://localhost:81">ВЕРНУТЬСЯ НА ГЛАВНУЮ</a>
+</div>
+<footer>
+    <div class="links">СЛЕДИТЕ ЗА НАМИ&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://vk.com/public216071530">&nbsp;VK&nbsp;</a>
+        <a href="https://t.me/rfz1858">&nbsp;TG</a>
+    </div>
+    <div class="contacts-info">
+        <p>ⓒ 2024</p>
+        <p>rfz@rfz.ru<br>+7 (499) 348-84-85</p>
+        <p>Понедельник - Пятница<br>9:00 - 18:00</p>
+        <p>140145, Московская обл.,<br>Раменский район, с.Речицы,<br>ул. Центральная, 2Б</p>
+    </div>
+</footer>
+<div id="popup-form" class="popup-form">
+    <div class="popup-content">
+        <form id="order-form">
+            <div class="form-title"><b>Введите свои данные</b></div>
+            <div class="form-group">
+            <label for="name">ИМЯ</label>
+            <input type="text" id="name" name="name" required placeholder="имя">
+            </div>
+            <div class="form-group">
+            <label for="surname">ФАМИЛИЯ</label>
+            <input type="text" id="surname" name="surname" required placeholder="фамилия">
+            </div>
+            <div class="form-group">
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" name="email" required placeholder="email">
+            </div>
+            <div class="form-group">
+            <label for="phone">НОМЕР</label>
+            <input type="tel" id="phone" name="phone" required placeholder="номер">
+            </div>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
