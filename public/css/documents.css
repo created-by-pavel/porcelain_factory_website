@@ -95,7 +95,7 @@ header {
 
 .documents-container {
     overflow: initial;
-    text-wrap: wrap;
+    white-space: normal;
     padding-left: 25px;
     font-size: max(16px, 1.5vw);
 }

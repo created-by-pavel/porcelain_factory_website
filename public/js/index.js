@@ -1,6 +1,5 @@
 let currentIndex = 0;
 
-// Функция для смены слайда
 function changeSlide() {
     const slides = document.querySelector('.slides');
     const totalSlides = document.querySelectorAll('.slide').length;
@@ -9,7 +8,6 @@ function changeSlide() {
     slides.style.transform = `translateX(${offset}%)`;
 }
 
-// Функция для закрытия popup при клике вне области
 function closePopupOnClickOutside(e) {
     const loginPopup = document.getElementById('login-popup');
     const registerPopup = document.getElementById('register-popup');
@@ -21,7 +19,6 @@ function closePopupOnClickOutside(e) {
     }
 }
 
-// Функция для переключения меню
 function toggleMenu() {
     const menuContainer = document.getElementById('menu-container');
     const menuToggle = document.getElementById('menu-toggle');
@@ -29,7 +26,6 @@ function toggleMenu() {
     menuToggle.innerHTML = menuContainer.classList.contains('active') ? '&#10006;' : '&#9776;';
 }
 
-// Функция для открытия popup входа
 function openLoginPopup(e) {
     e.preventDefault();
     const loginPopup = document.getElementById('login-popup');
@@ -40,7 +36,6 @@ function openLoginPopup(e) {
     menuToggle.innerHTML = '&#9776;';
 }
 
-// Функция для переключения между popup окнами
 function togglePopup(e, fromPopupId, toPopupId) {
     e.preventDefault();
     document.getElementById(fromPopupId).style.display = 'none';

@@ -17,11 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
         popupForm.style.display = 'block';
     });
 
-    window.addEventListener('click', (event) => {
+    const closePopup = (event) => {
         if (event.target === popupForm) {
             popupForm.style.display = 'none';
         }
-    });
+    };
+
+    window.addEventListener('click', closePopup);
+    window.addEventListener('touchstart', closePopup);
 
     const orderForm = document.getElementById('order-form');
     orderForm.addEventListener('submit', (event) => {
