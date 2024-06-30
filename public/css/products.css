@@ -32,7 +32,7 @@ header {
 }
 
 .title {
-    font-size: clamp(35px, 0.807rem + 3.78vw, 70px);
+    font-size: clamp(33px, 0.807rem + 3.78vw, 70px);
     line-height: 80px;
     margin-top: 8.5%;
 }
@@ -209,5 +209,8 @@ footer {
     .product-container {
         gap: 10px;
         margin-top: 15px;
+    }
+    .title {
+        font-weight: 500;
     }
 }

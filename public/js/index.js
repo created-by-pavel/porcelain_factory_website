@@ -1,7 +1,3 @@
-// GSAP анимация
-const loadTl = gsap.timeline();
-loadTl.from(".title h1", { opacity: 0, y: "3rem", duration: 1.5 });
-
 let currentIndex = 0;
 
 // Функция для смены слайда
@@ -52,6 +48,8 @@ function togglePopup(e, fromPopupId, toPopupId) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    gsap.from(".title h1", { opacity: 0, y: "3rem", duration: 1.5 });
+
     const profileLink = document.getElementById('profile-link');
     const showRegisterLink = document.getElementById('show-register');
     const showLoginLink = document.getElementById('show-login');

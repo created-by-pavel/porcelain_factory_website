@@ -265,6 +265,9 @@ form button:hover {
 }
 
 @media screen and (max-width: 600px) {
+    .left-block {
+        font-weight: 500;
+    }
     .item img {
         width: 100px;
     }
