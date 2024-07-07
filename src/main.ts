@@ -8,9 +8,17 @@ import * as swaggerUi from 'swagger-ui-express';
 import * as express from 'express';
 import * as path from 'path';
 import { PrismaService } from './prisma/prisma.service';
+import supertokens from 'supertokens-node';
+import {SupertokensExceptionFilter} from "./auth/auth.filter";
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  app.enableCors({
+    origin: ['http://localhost:81'],
+    allowedHeaders: ['content-type', ...supertokens.getAllCORSHeaders()],
+    credentials: true,
+  });
+  app.useGlobalFilters(new SupertokensExceptionFilter());
   const prismaService = app.get(PrismaService);
   app.enableShutdownHooks();
 

@@ -8,6 +8,14 @@ generator client {
   binaryTargets = ["native", "darwin-arm64"]
 }
 
+model User {
+  id      String @id
+  name    String
+  surname String
+  phone   String
+  email   String @unique
+}
+
 model Product {
   id             Int          @id @default(autoincrement())
   classification String

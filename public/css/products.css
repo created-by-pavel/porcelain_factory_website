@@ -123,6 +123,10 @@ footer {
     padding-bottom: 35px;
 }
 
+.goog-te-gadget .goog-te-combo {
+    appearance: initial;
+}
+
 .selected {
     text-decoration: underline;
 }
@@ -134,7 +138,7 @@ footer {
     padding-bottom: 25px;
 }
 
-.contacts-info p {
+.contacts-info p, #google_translate_element {
     align-self: end;
 }
 
@@ -179,7 +183,7 @@ footer {
         padding-bottom: 0;
     }
 
-    .contacts-info p {
+    .contacts-info p, #google_translate_element {
         padding-bottom: 2vh;
         margin-top: 20px;
         border-bottom: 2px solid #000000;

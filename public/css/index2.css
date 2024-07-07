@@ -151,11 +151,26 @@ menu {
     border-radius: 20px;
 }
 
+#otp-popup .popup-content {
+    width: 30%;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+}
+
+#otp-popup .form-group {
+    text-align: center;
+}
+
+#otp-popup input  {
+    text-align: center;
+}
+
 .form-group {
     margin-top: 15px;
 }
 
-#login-form button {
+#login-form button, #sendOtpButton, #resendButton {
     margin-top: 40px;
     width: 100%;
     cursor: pointer;
@@ -164,7 +179,12 @@ menu {
     padding: 10px;
     font-size: 16px;
     height: 70px;
-    border-radius: 10px;
+    border-radius: 25px;
+}
+
+#resendButton {
+    margin-top: 10px;
+    background-color: #939393;
 }
 
 #login-form  button:hover {
@@ -412,6 +432,14 @@ menu {
     flex-direction: column;
 }
 
+#profile-link {
+    cursor: pointer;
+}
+
+.goog-te-gadget .goog-te-combo {
+    appearance: initial;
+}
+
 .footer-flex-item {
     width: 25%;
     display: flex;
@@ -595,7 +623,7 @@ menu {
     }
 
     .circle {
-        padding-left: 35%;
+        padding-left: 32%;
     }
 
     .about-flex-item-2, .about-flex-item-4, .photo2, .photo3 {

@@ -82,6 +82,16 @@ form *{
     border-radius: 0;
 }
 
+.goog-te-gadget .goog-te-combo {
+    appearance: initial;
+}
+
+#google_translate_element {
+    position: absolute;
+    top: 400px;
+    left: 35px;
+}
+
 .form-container {
     margin-top: 15px;
     background-color: white;
@@ -159,6 +169,12 @@ footer {
 @media screen and (max-width: 796px) {
     body {
         padding: 10px 10px;
+    }
+
+    #google_translate_element {
+        position: relative;
+        top: 15px;
+        left: 0;
     }
 
     .form-container {

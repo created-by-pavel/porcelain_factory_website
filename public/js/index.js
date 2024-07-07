@@ -10,12 +10,12 @@ function changeSlide() {
 
 function closePopupOnClickOutside(e) {
     const loginPopup = document.getElementById('login-popup');
-    const registerPopup = document.getElementById('register-popup');
+    const otpPopup = document.getElementById('otp-popup');
     if (e.target === loginPopup) {
         loginPopup.style.display = 'none';
     }
-    if (e.target === registerPopup) {
-        registerPopup.style.display = 'none';
+    if (e.target === otpPopup) {
+        otpPopup.style.display = 'none';
     }
 }
 
@@ -26,29 +26,31 @@ function toggleMenu() {
     menuToggle.innerHTML = menuContainer.classList.contains('active') ? '&#10006;' : '&#9776;';
 }
 
-function openLoginPopup(e) {
-    e.preventDefault();
-    const loginPopup = document.getElementById('login-popup');
+function openPopup(popupId) {
+    const popup = document.getElementById(popupId);
     const menuContainer = document.getElementById('menu-container');
     const menuToggle = document.getElementById('menu-toggle');
-    loginPopup.style.display = 'block';
+    popup.style.display = 'block';
     menuContainer.classList.remove('active');
     menuToggle.innerHTML = '&#9776;';
 }
 
-function togglePopup(e, fromPopupId, toPopupId) {
-    e.preventDefault();
-    document.getElementById(fromPopupId).style.display = 'none';
-    document.getElementById(toPopupId).style.display = 'block';
+async function isAuthenticated() {
+    return localStorage.getItem('deviceId') != null && localStorage.getItem('preAuthSessionId') != null;
+}
+
+async function chooseAction(e) {
+    if (await supertokensSession.doesSessionExist()) {
+        window.location.href = 'http://localhost:81/user/info';
+    } else {
+        openPopup('login-popup', e);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     gsap.from(".title h1", { opacity: 0, y: "3rem", duration: 1.5 });
 
     const profileLink = document.getElementById('profile-link');
-    const showRegisterLink = document.getElementById('show-register');
-    const showLoginLink = document.getElementById('show-login');
-    const popupContents = document.querySelectorAll('.popup-content');
     const arrowDown = document.querySelector('.arrow-down');
     const menuToggle = document.getElementById('menu-toggle');
 
@@ -56,18 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuToggle.addEventListener('click', toggleMenu);
 
-    profileLink.addEventListener('click', openLoginPopup);
+    profileLink.addEventListener('click', chooseAction);
 
     window.addEventListener('click', closePopupOnClickOutside);
     window.addEventListener('touchstart', closePopupOnClickOutside);
-
-    showRegisterLink.addEventListener('click', (e) => togglePopup(e, 'login-popup', 'register-popup'));
-
-    showLoginLink.addEventListener('click', (e) => togglePopup(e, 'register-popup', 'login-popup'));
-
-    popupContents.forEach(content => {
-        content.addEventListener('click', (e) => e.stopPropagation());
-    });
 
     arrowDown.addEventListener('click', () => {
         window.scrollBy({

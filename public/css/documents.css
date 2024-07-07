@@ -88,8 +88,18 @@ header {
     overflow-x: hidden;
 }
 
-.star {
+.block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 60px;
+}
+
+.goog-te-gadget .goog-te-combo {
+    appearance: initial;
+}
+
+.star {
     width: 11vw;
 }
 

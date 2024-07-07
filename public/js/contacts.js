@@ -3,7 +3,6 @@ loadTl.from(".documents-container li", {opacity: 0, x: "50rem", duration: 1, sta
 
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector("form");
-    const formContainer = document.getElementById("form-container");
     form.addEventListener("submit", submit);
 
     async function submit(e) {
@@ -21,9 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
             number: number,
             message: message
         };
-
-        console.log(JSON.stringify(formData));
-
 
         // formContainer.classList.add('sending');
         let response = await fetch("https://porcelain-factory-website.onrender.com/mail/send/contact", {
