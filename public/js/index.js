@@ -10,7 +10,6 @@ function changeSlide() {
 
 function closePopupOnClickOutside(e) {
     const loginPopup = document.getElementById('login-popup');
-    const otpPopup = document.getElementById('otp-popup');
     if (e.target === loginPopup) {
         loginPopup.style.display = 'none';
     }
