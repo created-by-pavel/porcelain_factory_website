@@ -1,7 +1,7 @@
 supertokens.init({
     enableDebugLogs: true,
     appInfo: {
-        apiDomain: "http://localhost:81",
+        apiDomain: "https://porcelain-factory-website.onrender.com",
         apiBasePath: '/',
         appName: "porcelain_factory",
     },

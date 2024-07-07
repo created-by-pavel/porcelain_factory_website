@@ -4,8 +4,8 @@ import Dashboard from 'supertokens-node/recipe/dashboard';
 
 export const appInfo = {
     appName: 'porcelain_factory',
-    apiDomain: 'http://localhost:81',
-    websiteDomain: 'http://localhost:81',
+    apiDomain: 'https://porcelain-factory-website.onrender.com',
+    websiteDomain: 'https://porcelain-factory-website.onrender.com',
     apiBasePath: '/',
     websiteBasePath: '/',
 };

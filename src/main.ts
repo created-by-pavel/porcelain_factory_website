@@ -14,7 +14,7 @@ import {SupertokensExceptionFilter} from "./auth/auth.filter";
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.enableCors({
-    origin: ['http://localhost:81'],
+    origin: ['https://porcelain-factory-website.onrender.com'],
     allowedHeaders: ['content-type', ...supertokens.getAllCORSHeaders()],
     credentials: true,
   });

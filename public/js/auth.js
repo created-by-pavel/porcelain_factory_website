@@ -12,7 +12,7 @@ async function sendOTP(e) {
     const otpPopup = document.getElementById('otp-popup');
     const email = document.getElementById('email').value;
     try {
-        let response = await fetch('http://localhost:81/signinup/code', {
+        let response = await fetch('https://porcelain-factory-website.onrender.com/signinup/code', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ async function handleOTPInput(e) {
     };
 
     try {
-        const response = await fetch("http://localhost:81/signinup/code/consume", {
+        const response = await fetch("https://porcelain-factory-website.onrender.com/signinup/code/consume", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json; charset=utf-8'
@@ -66,7 +66,7 @@ async function handleOTPInput(e) {
         let data = await response.json();
 
         if (response.ok && data.status === 'OK') {
-            window.location.href = 'http://localhost:81/user/info';
+            window.location.href = 'https://porcelain-factory-website.onrender.com/user/info';
         } else {
             window.alert('OTP verification failed: ' + (data.message || 'Unknown error'));
         }
