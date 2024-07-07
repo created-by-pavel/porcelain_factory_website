@@ -18,6 +18,8 @@ async function submit(e) {
     const name = document.getElementById('name').value;
     const surname = document.getElementById('surname').value;
     const phone = document.getElementById('phone-popup').value;
+    await validatePhone(phone);
+
     const email = localStorage.getItem('email');
 
     const formData = {
@@ -45,4 +47,11 @@ async function submit(e) {
 async function logout () {
     await supertokensSession.signOut();
     window.location.href = "/";
+}
+
+async function validatePhone (phoneValue) {
+    const phonePattern = /^\+7\d{10}$/;
+    if (!phonePattern.test(phoneValue)) {
+        window.alert('Номер телефона должен начинаться с +7 и содержать 11 цифр')
+    }
 }
