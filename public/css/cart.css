@@ -240,6 +240,7 @@ form button:hover {
 
 .goog-te-gadget .goog-te-combo {
     appearance: initial;
+    background-color: #ffffff;
 }
 
 @media screen and (max-width: 1024px) {

@@ -525,6 +525,10 @@ form *{
         display: block;
     }
 
+    #otp-popup .popup-content {
+        width: 85%;
+    }
+
     .title-text {
         margin-top: 100px;
     }
