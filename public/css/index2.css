@@ -61,7 +61,8 @@ html, body {
 }
 
 .logo {
-    align-self: center;
+    display: flex;
+    justify-content: center;
 }
 
 .horizontal_line {
@@ -143,19 +144,19 @@ menu {
 }
 
 .popup-content {
-    display: flex;
     background-color: #ffffff;
     margin: 5% auto;
-    padding: 50px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
     width: 70%;
     border-radius: 20px;
 }
 
 #otp-popup .popup-content {
+    display: block;
     width: 30%;
     flex-direction: column;
-    align-items: center;
-    padding: 25px;
 }
 
 #otp-popup .form-group {
@@ -166,8 +167,18 @@ menu {
     text-align: center;
 }
 
+form *{
+    outline: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
 .form-group {
-    margin-top: 15px;
+    margin-top: 20px;
+}
+
+.left-block {
+    width: 60%;
 }
 
 #login-form button, #sendOtpButton, #resendButton {
@@ -206,20 +217,14 @@ menu {
     text-decoration: underline;
 }
 
-.left-block {
-    width: 50%;
-}
-
 .popup-img {
+    display: flex;
+    justify-content: center;
     padding: 40px;
 }
 
 .left-block img {
-    width: 80%;
-}
-
-.right-block {
-    width: 50%;
+    width: 400px;
 }
 
 #about {
@@ -438,6 +443,7 @@ menu {
 
 .goog-te-gadget .goog-te-combo {
     appearance: initial;
+    background-color: #ffffff;
 }
 
 .footer-flex-item {
@@ -460,8 +466,27 @@ menu {
         padding: 10px;
         height: 300px;
     }
+
     .stone-img img{
         width: 200px;
+    }
+
+    .popup-content {
+        flex-direction: column;
+        width: 85%;
+    }
+
+    .popup-img {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .left-block {
+        width: 100%;
+    }
+
+    .left-block img {
+        width: 300px;
     }
 }
 
@@ -504,25 +529,8 @@ menu {
         margin-top: 100px;
     }
 
-    .popup-img {
-        padding: 30px;
-    }
-
-    .left-block img {
-        width: 100%;
-    }
-
-    .popup-content {
-        flex-direction: column;
-        width: 80%;
-    }
-
-    .left-block, .right-block {
-        width: 100%;
-    }
-
-    .right-block {
-        margin-top: 30px;
+    #login-form b {
+        font-size: 17px;
     }
 
     .header, .catalog-title {
@@ -600,6 +608,10 @@ menu {
     .presentation-wrapper {
         display: flex;
         flex-direction: column;
+    }
+
+    .left-block img {
+        width: 200px;
     }
 
     .title-block {
