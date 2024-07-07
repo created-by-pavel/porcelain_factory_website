@@ -189,6 +189,10 @@ form *{
         font-size: 14px;
     }
 
+    .popup-content {
+        width:85%;
+    }
+
     .contacts-info {
         display: block;
     }
