@@ -63,7 +63,7 @@ header {
     align-items: center;
 }
 
-.product-price, .product-name, .add-to-cart-button {
+#google_translate_element, .product-title, .add-to-cart-button {
     flex: 1;
 }
 
@@ -72,8 +72,10 @@ header {
     justify-content: right;
 }
 
-.product-name {
+.product-title {
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .quantity-button {
@@ -139,12 +141,6 @@ footer {
     text-align: center;
 }
 
-#google_translate_element {
-    position: absolute;
-    top: 70px;
-    right: 10px;
-}
-
 .goog-te-gadget .goog-te-combo {
     appearance: initial;
     background-color: #ffffff;
@@ -177,7 +173,7 @@ footer {
         display: none;
     }
 
-    .product-name, .buttons {
+    .product-title, .buttons {
         flex: none;
     }
 }
@@ -211,7 +207,7 @@ footer {
         object-fit: cover;
     }
 
-    .product-name {
+    .product-title {
         text-align: left;
     }
 
@@ -261,6 +257,11 @@ footer {
 
     .back-link a {
         font-size: 14px;
+    }
+    #google_translate_element {
+        position: absolute;
+        top: 70px;
+        right: 10px;
     }
 }
 

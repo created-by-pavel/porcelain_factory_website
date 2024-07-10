@@ -96,7 +96,7 @@ main {
     object-fit: cover;
 }
 
-.item-price {
+.item-classification {
     padding-top: 15px;
 }
 
@@ -107,6 +107,7 @@ main {
 }
 
 .increment-button, .decrement-button {
+    font-size: 16px;
     padding: 5px;
     background-color: #ffffff;
     color: black;
@@ -132,11 +133,6 @@ main {
     font-size: clamp(0.875rem, 0.777rem + 0.4vw, 1.563rem);
     text-decoration: underline;
     cursor: pointer;
-}
-
-.total-price {
-    align-self: flex-end;
-    font-size: max(16px, 1.2vw);
 }
 
 .cart-bottom {

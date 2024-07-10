@@ -1,5 +1,4 @@
 const cartStorage = JSON.parse(localStorage.getItem('products') || '[]');
-let totalPrice = document.querySelector('#total-price');
 let items = document.querySelector('#items');
 let popupForm = document.getElementById('popup-form');
 let openButton = document.querySelector('.submit-button');
@@ -58,13 +57,12 @@ function drawCart() {
     items.innerHTML = '';
     total = 0;
     cartStorage.forEach((product, index) => {
-        total += parseInt(product.price) * product.quantity;
         const newItem = document.createElement('div');
         newItem.classList.add('item');
         newItem.innerHTML = `<div class="item-img"><img src=${product.imgPath}></div>
                               <div class="item-info">
                                    <div class="item-name">${product.name}</div>
-                                   <div class="item-price">${product.price} ₽</div>
+                                   <div class="item-classification">${product.classification}</div>
                                      <div class="quantity-button-wrapper">
                                         <div class="quantity-button">
                                             <button class="decrement-button" data-index="${index}">-</button>
@@ -79,7 +77,6 @@ function drawCart() {
                     </div>`;
         items.appendChild(newItem);
     });
-    totalPrice.textContent = `${total} ₽`;
 
     document.querySelectorAll('.increment-button').forEach(button => {
         button.addEventListener('click', incrementQuantity);
@@ -101,9 +98,6 @@ function incrementQuantity(event) {
     quantity++;
 
     numberSpan.textContent = quantity;
-    const productPrice = parseInt(event.target.closest('.item').querySelector('.item-price').textContent);
-    total += productPrice;
-    totalPrice.textContent = `${total} ₽`;
 
     const product = JSON.parse(cartStorage[index]);
     product.quantity = quantity;
@@ -119,9 +113,6 @@ function decrementQuantity(event) {
         quantity--;
 
         numberSpan.textContent = quantity;
-        const productPrice = parseInt(event.target.closest('.item').querySelector('.item-price').textContent);
-        total -= productPrice;
-        totalPrice.textContent = `${total} ₽`;
 
         const product = JSON.parse(cartStorage[index]);
         product.quantity = quantity;
@@ -133,11 +124,7 @@ function decrementQuantity(event) {
 function deleteItem(event) {
     const index = event.target.getAttribute('data-index');
     const item = event.target.closest('.item');
-    const productPrice = parseInt(item.querySelector('.item-price').textContent);
     const quantity = parseInt(item.querySelector('.number').textContent);
-
-    total -= productPrice * quantity;
-    totalPrice.textContent = `${total} ₽`;
 
     cartStorage.splice(index, 1);
     localStorage.setItem('products', JSON.stringify(cartStorage));

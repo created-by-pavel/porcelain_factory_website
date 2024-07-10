@@ -34,11 +34,14 @@
     <div class="product-img" id="product-img"><img src="{{this.imageUrl}}"></div>
 </main>
 <div class="bottom">
-    <div class="product-price" id="product-price">{{this.price}} &#8381;</div>
-    <div class="product-name" id="product-name">{{this.title.name}} / {{this.classification}}</div>
+    <div id="google_translate_element"></div>
+    <div class="product-title">
+        <div id="product-name">{{this.title.name}}</div>
+        /
+        <div id="product-classification">{{this.classification}}</div>
+    </div>
     <button class="add-to-cart-button" id="add-to-cart-button">ДОБАВИТЬ В КОРЗИНУ</button>
 </div>
-<div id="google_translate_element"></div>
 <footer>
     <div class="links">
         <a href="https://vk.com/public216071530">VK&nbsp;</a>

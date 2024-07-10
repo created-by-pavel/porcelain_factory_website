@@ -1,7 +1,7 @@
 const cartButton = document.querySelector('#add-to-cart-button');
 const popup = document.querySelector('#popup');
 const productName = document.querySelector('#product-name');
-const productPrice = document.querySelector('#product-price');
+const productClassification = document.querySelector('#product-classification');
 const productImage = document.querySelector('#product-img img');
 const productId = window.location.pathname.split('/').pop();
 
@@ -11,7 +11,7 @@ cartButton.addEventListener('click', function (e) {
     let newProduct = {
         id: productId,
         name: productName.textContent,
-        price: parseInt(productPrice.textContent.replace(/\D/g, '')),
+        classification: productClassification.textContent,
         imgPath: productImage.src,
         quantity: 1,
     };
