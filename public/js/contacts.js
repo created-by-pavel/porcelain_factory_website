@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
         // formContainer.classList.add('sending');
-        let response = await fetch("https://porcelain-factory-website.onrender.com/mail/send/contact", {
+        let response = await fetch("/mail/send/contact", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

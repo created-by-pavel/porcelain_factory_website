@@ -329,6 +329,10 @@ form *{
     object-fit: cover;
 }
 
+.update-text {
+    display: none;
+}
+
 .about-flex-item-1, .about-flex-item-2, .about-flex-item-3, .about-flex-item-4 {
     width: 25%;
     border: 1px solid #000000;
@@ -363,6 +367,7 @@ form *{
 }
 
 .about-flex-item {
+    display: block;
     border: 1px solid #000000;
     padding: 25px;
     font-size: clamp(1rem, 0.188rem + 0.86vw, 1.563rem);
@@ -491,11 +496,6 @@ form *{
 }
 
 @media screen and (max-width: 796px) {
-    .about-flex-item, .about-flex-item-long-image {
-        padding: 16px;
-        height: auto;
-    }
-
     #menu-toggle {
         display: block;
     }
@@ -529,14 +529,6 @@ form *{
         width: 85%;
     }
 
-    .title-text {
-        margin-top: 100px;
-    }
-
-    #login-form b {
-        font-size: 17px;
-    }
-
     .header, .catalog-title {
         padding: 10px 20px;
     }
@@ -554,16 +546,12 @@ form *{
         height: 425px;
     }
 
+    #login-form b {
+        font-size: 17px;
+    }
+
     .circle svg {
         width: 100px;
-    }
-
-    .about-flex-item-4 {
-        padding: 0;
-    }
-
-    .about-flex-item-1, .about-flex-item-2, .about-flex-item-3, .about-flex-item-4 {
-        height: 200px;
     }
 
     .about-flex-item p {
@@ -579,20 +567,8 @@ form *{
     .footer-flex-item {
         padding: 20px 10px;
     }
-}
-
-@media screen and (max-width: 600px) {
     .header {
         padding: 10px 16px;
-    }
-    .presentation-wrapper {
-        padding: 20px 15px;
-        }
-    .title-text {
-        margin-top: 60px;
-    }
-    .arrow-down {
-        margin-top: 50px;
     }
     .catalog {
         height: 150px;
@@ -609,25 +585,9 @@ form *{
         height: 30px;
     }
 
-    .presentation-wrapper {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .left-block img {
-        width: 200px;
-    }
-
-    .title-block {
-        display: block;
-    }
-
-    .photos .row {
-        height: 300px;
-    }
-
     .about-flex-item-long-image {
         padding: 0;
+        height: auto;
     }
 
     .about-flex-item-2 {
@@ -640,6 +600,14 @@ form *{
 
     .circle {
         padding-left: 32%;
+    }
+
+    .about-flex-item-4 {
+        padding: 0;
+    }
+
+    .about-flex-item-1, .about-flex-item-2, .about-flex-item-3, .about-flex-item-4 {
+        height: 200px;
     }
 
     .about-flex-item-2, .about-flex-item-4, .photo2, .photo3 {
@@ -655,18 +623,14 @@ form *{
         width: 100%;
     }
 
-    .slider {
-        height: 325px;
-        margin-top: 25px;
-    }
-
     .about-flex-item {
         height: auto;
-        padding: 40px 16px;
+        padding: 40px 80px 40px 16px;
     }
 
-    .update-text p::after {
-        content: ' В 60 км от Москвы расположено село Гжель, давшее название промыслу. Речицкий завод по производству фарфоровой. В 60 км от Москвы расположено село Гжель, давшее название промыслу. Речицкий завод по производству фарфоровой';
+    .update-text {
+        padding-top: 30px;
+        display: block;
     }
 
     .delete,
@@ -674,5 +638,39 @@ form *{
     .footer .row:first-child .footer-flex-item:nth-child(3),
     .footer .row:first-child .footer-flex-item:nth-child(4) {
         display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        padding: 10px 16px;
+    }
+    .title-block {
+        display: block;
+    }
+    .about-flex-item {
+        height: auto;
+        padding: 40px 16px;
+    }
+    .slider {
+        height: 325px;
+        margin-top: 25px;
+    }
+    .presentation-wrapper {
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    .title-text {
+        margin-top: 60px;
+    }
+    .arrow-down {
+        margin-top: 50px;
+    }
+    .left-block img {
+        width: 200px;
+    }
+    .photos .row {
+        height: 300px;
     }
 }

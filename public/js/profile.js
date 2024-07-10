@@ -29,7 +29,7 @@ async function submit(e) {
         email: email,
     };
         // formContainer.classList.add('sending');
-        let response = await fetch("https://porcelain-factory-website.onrender.com/user/create", {
+        let response = await fetch("/user/create", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

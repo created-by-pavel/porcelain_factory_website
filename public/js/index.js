@@ -40,7 +40,7 @@ async function isAuthenticated() {
 
 async function chooseAction(e) {
     if (await supertokensSession.doesSessionExist()) {
-        window.location.href = 'https://porcelain-factory-website.onrender.com/user/info';
+        window.location.href = '/user/info';
     } else {
         openPopup('login-popup', e);
     }

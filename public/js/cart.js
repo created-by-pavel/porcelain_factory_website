@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data.products = cartStorage.map(product => JSON.parse(product));
         data.total = total;
 
-        fetch('https://porcelain-factory-website.onrender.com/mail/send/order', {
+        fetch('/mail/send/order', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -144,12 +144,9 @@ function deleteItem(event) {
 
     item.remove();
 
-    // хз
     document.querySelectorAll('.item').forEach((item, i) => {
         item.querySelector('.delete-button').setAttribute('data-index', i);
         item.querySelector('.increment-button').setAttribute('data-index', i);
         item.querySelector('.decrement-button').setAttribute('data-index', i);
     });
 }
-
-// валидация перед отправкой 
