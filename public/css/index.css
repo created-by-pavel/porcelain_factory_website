@@ -318,7 +318,7 @@ form *{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(18px, 0.42rem + 3.52vw, 60px);
+    font-size: clamp(25px, 0.42rem + 3.52vw, 60px);
     height: 200px;
     font-family: 'Exo 2';
 }
@@ -571,7 +571,7 @@ form *{
         padding: 10px 16px;
     }
     .catalog {
-        height: 150px;
+        height: 200px;
         border: 1px solid #000000;
     }
 
@@ -629,8 +629,11 @@ form *{
     }
 
     .update-text {
-        padding-top: 30px;
         display: block;
+    }
+
+    .update-text p {
+        margin-top: 20px;
     }
 
     .delete,
@@ -650,7 +653,7 @@ form *{
     }
     .about-flex-item {
         height: auto;
-        padding: 40px 16px;
+        padding: 80px 16px;
     }
     .slider {
         height: 325px;
@@ -660,6 +663,9 @@ form *{
         padding: 20px 15px;
         display: flex;
         flex-direction: column;
+    }
+    .photos .row:nth-child(2) {
+        height: 200px;
     }
     .title-text {
         margin-top: 60px;
