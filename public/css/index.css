@@ -386,6 +386,11 @@ form *{
     width: 50%;
 }
 
+.about-flex-item-long-image img{
+    width: 100%;
+    height: 100%;
+}
+
 .logo-scroller-block {
     overflow: hidden;
     border: 1px solid #000000;
@@ -588,6 +593,23 @@ form *{
     .about-flex-item-long-image {
         padding: 0;
         height: auto;
+        border: 0;
+    }
+
+    #about .row:nth-child(3) .about-flex-item-long-image {
+        display: flex;
+        justify-content: right;
+        padding-right: 16px;
+    }
+
+    #about .row:last-child .about-flex-item-long-image {
+        padding-left: 16px;
+        padding-bottom: 16px;
+    }
+
+    #about .row:nth-child(3) .about-flex-item-long-image img,
+    #about .row:last-child .about-flex-item-long-image img{
+        width: 70%;
     }
 
     .about-flex-item-2 {
@@ -626,6 +648,7 @@ form *{
     .about-flex-item {
         height: auto;
         padding: 40px 80px 40px 16px;
+        border: 0;
     }
 
     .update-text {
@@ -634,6 +657,11 @@ form *{
 
     .update-text p {
         margin-top: 20px;
+    }
+
+    .bottom p{
+        margin-top: 0;
+        margin-bottom: 20px;
     }
 
     .delete,
@@ -653,7 +681,7 @@ form *{
     }
     .about-flex-item {
         height: auto;
-        padding: 80px 16px;
+        padding: 70px 16px;
     }
     .slider {
         height: 325px;
