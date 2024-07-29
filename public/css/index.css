@@ -611,9 +611,13 @@ form *{
         padding-bottom: 16px;
     }
 
-    #about .row:nth-child(3) .about-flex-item-long-image img,
-    #about .row:last-child .about-flex-item-long-image img{
+    #about .row:nth-child(3) .about-flex-item-long-image img {
         width: 70%;
+    }
+
+    #about .row:last-child .about-flex-item-long-image img {
+        width: 75%;
+        height: 170px;
     }
 
     .about-flex-item-2 {
