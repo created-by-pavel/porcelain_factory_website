@@ -93,7 +93,8 @@ main {
 
 .item img {
     width: 135px;
-    object-fit: cover;
+    height: 145px;
+    object-fit: contain;
 }
 
 .item-classification {

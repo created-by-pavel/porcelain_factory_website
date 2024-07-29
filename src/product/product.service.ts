@@ -24,6 +24,9 @@ export class ProductService {
       where: {
         categoryId: Number(categoryId),
       },
+      orderBy: {
+        id: 'asc',
+      },
       include: {
         title: true,
       },

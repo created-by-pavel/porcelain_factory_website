@@ -73,7 +73,7 @@ function drawCart() {
                               </div>
                               <div class="item-actions">
                         <div class="delete-button" data-index="${index}">&#x2717;</div>
-                        <div class="move-to-item">перейти &rarr;</div>
+                        <div class="move-to-item"><a href="/products/item/${product.id}">перейти &rarr;</div>
                     </div>`;
         items.appendChild(newItem);
     });

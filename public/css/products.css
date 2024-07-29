@@ -104,6 +104,10 @@ header {
     object-fit: cover;
 }
 
+.product-name {
+    text-align: center;
+}
+
 .company {
     font-size: 12px;
     margin-top: 10px;

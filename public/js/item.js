@@ -1,44 +1,55 @@
 const cartButton = document.querySelector('#add-to-cart-button');
-const popup = document.querySelector('#popup');
+const quantityPopup = document.querySelector('#quantity-popup');
 const productName = document.querySelector('#product-name');
+const quantityInput = document.querySelector('#quantity');
+const quantityButton = document.querySelector('#quantity-button');
+const successPopup = document.querySelector('#success-popup');
 const productClassification = document.querySelector('#product-classification');
 const productImage = document.querySelector('#product-img img');
 const productId = window.location.pathname.split('/').pop();
 
 cartButton.addEventListener('click', function (e) {
     e.preventDefault();
+    popupOpen(quantityPopup);
+});
+
+quantityButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    const quantity = parseInt(quantityInput.value);
+
+    if (!quantity || quantity <= 0) {
+        alert('Введите корректное количество');
+        return;
+    }
 
     let newProduct = {
         id: productId,
         name: productName.textContent,
         classification: productClassification.textContent,
         imgPath: productImage.src,
-        quantity: 1,
+        quantity: quantity,
     };
 
     let products = JSON.parse(localStorage.getItem('products') || '[]');
-    let existingProductIndex = -1;
-    for (let i = 0; i < products.length; i++) {
-        if (parseInt(products[i].id) === parseInt(productId)) {
-            existingProductIndex = i;
-            break;
-        }
-    }
+    let existingProductIndex = products.findIndex(product => product.id === productId);
+
     if (existingProductIndex !== -1) {
-        products[existingProductIndex].quantity += 1;
+        products[existingProductIndex].quantity += quantity;
     } else {
         products.push(newProduct);
     }
+
     localStorage.setItem('products', JSON.stringify(products));
 
-    popupOpen(popup);
+    popupClose(quantityPopup);
+    popupOpen(successPopup);
 });
 
 function popupOpen(currentPopup) {
     currentPopup.classList.add('open');
     currentPopup.addEventListener('click', function (e) {
         if (!e.target.closest('.popup-content')) {
-            popupClose(e.target.closest('#popup'));
+            popupClose(currentPopup);
         }
     });
 }

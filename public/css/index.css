@@ -244,7 +244,7 @@ form *{
 
 .photo1 {
     width: 25%;
-    background-image: url("/img/about5.jpg");
+    background-image: url("/img/man3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid #000000;
@@ -252,7 +252,7 @@ form *{
 
 .photo2 {
     width: 25%;
-    background-image: url("/img/photo2.jpg");
+    background-image: url("/img/man2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid #000000;
@@ -273,7 +273,7 @@ form *{
 
 .photo4 {
     width: 25%;
-    background-image: url("/img/photo6.jpg");
+    background-image: url("/img/man4.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid #000000;
@@ -291,7 +291,7 @@ form *{
 
 .photo6 {
     width: 25%;
-    background-image: url("/img/photo5.jpg");
+    background-image: url("/img/containers.jpg");
     background-repeat: no-repeat;
     background-position: center;
     border: 1px solid #000000;
@@ -553,6 +553,10 @@ form *{
 
     #login-form b {
         font-size: 17px;
+    }
+
+    #about {
+        margin-bottom: 65px;
     }
 
     .circle svg {
