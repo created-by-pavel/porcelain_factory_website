@@ -612,11 +612,11 @@ form *{
     }
 
     #about .row:nth-child(3) .about-flex-item-long-image img {
-        width: 70%;
+        width: 75%;
     }
 
     #about .row:last-child .about-flex-item-long-image img {
-        width: 75%;
+        width: 77%;
         height: 170px;
     }
 

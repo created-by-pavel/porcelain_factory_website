@@ -24,7 +24,7 @@ export class MailerController {
       <p><strong>Сообщение:</strong></p>
       <p>${message}</p>
     `;
-
+// 'sbut1@rfz.ru'
     return this.mailService.sendMail('pavelzavalnyuk11@gmail.com', 'Новое сообщение с сайта', htmlMessage);
   }
 
@@ -48,6 +48,7 @@ export class MailerController {
         <h2><strong>Всего</strong> ${total}</h2>`;
 
     await this.mailService.sendMail(email, 'Ваш заказ на rfz.ru принят!', htmlMessage);
+    // 'sbut1@rfz.ru'
     return this.mailService.sendMail('pavelzavalnyuk11@gmail.com', 'Новый Заказ', htmlMessage);
   }
 }
