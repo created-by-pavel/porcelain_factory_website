@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const email = document.getElementById("email").textContent.trim();
     const popup = document.getElementById("profile-popup");
     const logoutButton = document.getElementById("log-out-button");
+    const ordersButton = document.getElementById("orders-button");
 
     if (!phone || !surnameName || !email) {
         popup.style.display = "block";
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         form.addEventListener("submit", submit);
     }
     logoutButton.addEventListener("click", logout)
+    ordersButton.addEventListener('click', getOrders);
 });
 
 async function submit(e) {
@@ -54,4 +56,8 @@ async function validatePhone (phoneValue) {
     if (!phonePattern.test(phoneValue)) {
         window.alert('Номер телефона должен начинаться с +7 и содержать 11 цифр')
     }
+}
+
+async function getOrders () {
+   window.location.href = "/orders/all"
 }

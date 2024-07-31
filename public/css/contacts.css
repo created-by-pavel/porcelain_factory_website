@@ -28,13 +28,13 @@ header {
 }
 
 #img-block {
-    width: 16%;
+    width: 25%;
     align-self: flex-end;
-    margin-bottom: auto;
     margin-right: 5%;
 }
 
 .back-link {
+    margin-top: 140px;
     align-self: flex-start;
 }
 
@@ -165,6 +165,10 @@ footer {
     body {
         padding: 10px 10px;
     }
+
+    .back-link {
+        margin-top: 100px;
+    }
 }
 
 @media screen and (max-width: 796px) {
@@ -205,6 +209,10 @@ footer {
 
     #img-block {
         width: 40%;
+    }
+
+    .back-link {
+        margin-top: 70px;
     }
 }
 

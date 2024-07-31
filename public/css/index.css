@@ -252,7 +252,7 @@ form *{
 
 .photo2 {
     width: 25%;
-    background-image: url("/img/man2.jpg");
+    background-image: url("/img/man22.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid #000000;
@@ -291,7 +291,7 @@ form *{
 
 .photo6 {
     width: 25%;
-    background-image: url("/img/containers.jpg");
+    background-image: url("/img/car.jpg");
     background-repeat: no-repeat;
     background-position: center;
     border: 1px solid #000000;
@@ -432,14 +432,10 @@ form *{
     font-size: clamp(2.188rem, 1.339rem + 4.24vw, 8.125rem);
     text-align: left;
     font-family: 'Exo 2';
-    display: flex;
-    justify-content: space-between;
     border: 1px solid #000000;
-}
-
-
-.stone-img img{
-    width: 400px;
+    background-image: url("/img/containers.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .footer {
@@ -611,13 +607,9 @@ form *{
         padding-bottom: 16px;
     }
 
-    #about .row:nth-child(3) .about-flex-item-long-image img {
-        width: 75%;
-    }
-
+    #about .row:nth-child(3) .about-flex-item-long-image img,
     #about .row:last-child .about-flex-item-long-image img {
-        width: 77%;
-        height: 170px;
+        width: 75%;
     }
 
     .about-flex-item-2 {

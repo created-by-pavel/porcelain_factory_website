@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #fff;
+    font-family: 'Open Sans';
+    font-size: clamp(16px, 1.2vw, 19px);
+}
+
+body {
+    padding: 10px 35px;
+}
+
+a, li {
+    text-decoration: none;
+    color: #000;
+    list-style: none;
+}
+
+.back-link a {
+    color: #DF5454;
+    text-decoration: underline;
+}
+
+.goog-te-gadget .goog-te-combo {
+    appearance: initial;
+    background-color: #ffffff;
+}
+
+.main {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order img {
+    width: 100px;
+}
+
+.order ul {
+    display: flex;
+}
+
+.order-title {
+    text-align: center;
+}
+
+.order {
+    border-bottom: 1px solid #000000;
+}
+
+.orders-wrapper {
+    margin-top: 20px;
+    border: solid 1px #000000;
+    width: 70vw;
+    height: 400px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.contacts-info {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+
+.contacts-info p, #google_translate_element {
+    align-self: end;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+.links {
+    border-bottom: 2px solid #000;
+    padding-bottom: 35px;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        padding: 10px 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .back-link a {
+        font-size: 14px;
+    }
+
+    footer {
+        margin-top: 35px;
+    }
+
+    .contacts-info {
+        display: block;
+    }
+
+    .contacts-info p, #google_translate_element {
+        padding-bottom: 2vh;
+        margin-top: 20px;
+        border-bottom: 2px solid #000000;
+    }
+
+    .links {
+        padding-bottom: 2vh;
+    }
+
+    .contacts-info p:last-child {
+        border-bottom: 0;
+    }
+
+    .main {
+        margin-top: 50px;
+    }
+
+    .orders-wrapper {
+        width: 80vw;
+    }
+}

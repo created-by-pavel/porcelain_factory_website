@@ -22,12 +22,6 @@ export class AppController {
     return;
   }
 
-  @Get('/register')
-  @Render(`register`)
-  getRegisterPage() {
-    return;
-  }
-
   @Get('/cart')
   @Render(`cart`)
   getCartPage() {

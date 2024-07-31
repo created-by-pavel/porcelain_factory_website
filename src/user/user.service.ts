@@ -26,13 +26,11 @@ export class UserService {
     });
   }
 
-//   async update(id: string, userDto: UpdateUserDto): Promise<User | null> {
-//     return this.prisma.user.update({
-//       where: { id },
-//       data: userDto,
-//     });
-//   }
-
-
+  // async update(id: string, userDto: NewOrderDto): Promise<User | null> {
+  //   return this.prisma.user.update({
+  //     where: { id },
+  //     data: userDto,
+  //   });
+  // }
 }
 

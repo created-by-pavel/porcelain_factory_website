@@ -8,6 +8,7 @@ import {AuthModule} from './auth/auth.module';
 import {PrismaModule} from "./prisma/prisma.module";
 import * as SuperTokensConfig from './config';
 import {UserModule} from "./user/user.module";
+import {OrderModule} from "./order/order.module";
 
 @Module({
     imports: [ConfigModule.forRoot({
@@ -22,9 +23,9 @@ import {UserModule} from "./user/user.module";
         MailerModule,
         ProductModule,
         UserModule,
+        OrderModule,
     ],
     controllers: [AppController],
     providers: [AppService],
 })
-export class AppModule {
-}
+export class AppModule {}

@@ -1,56 +1,9 @@
 const cartStorage = JSON.parse(localStorage.getItem('products') || '[]');
 let items = document.querySelector('#items');
-let popupForm = document.getElementById('popup-form');
-let openButton = document.querySelector('.submit-button');
-let openButton2 = document.querySelector('.left-block span');
 let total = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     drawCart();
-
-    openButton.addEventListener('click', () => {
-        popupForm.style.display = 'block';
-    });
-
-    openButton2.addEventListener('click', () => {
-        popupForm.style.display = 'block';
-    });
-
-    const closePopup = (event) => {
-        if (event.target === popupForm) {
-            popupForm.style.display = 'none';
-        }
-    };
-
-    window.addEventListener('click', closePopup);
-    window.addEventListener('touchstart', closePopup);
-
-    const orderForm = document.getElementById('order-form');
-    orderForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        const formData = new FormData(orderForm);
-        const data = Object.fromEntries(formData.entries());
-        data.products = cartStorage.map(product => JSON.parse(product));
-        data.total = total;
-
-        fetch('/mail/send/order', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                alert('Форма отправлена');
-                popupForm.style.display = 'none';
-                localStorage.removeItem('products');
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                alert('Ошибка при отправке формы');
-            });
-    });
 });
 
 function drawCart() {
