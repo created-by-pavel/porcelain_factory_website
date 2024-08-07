@@ -3,7 +3,6 @@ import { MailerService } from './mailer.service';
 
 interface Product {
   name: string;
-  price: number;
   quantity: number;
 }
 
@@ -43,9 +42,9 @@ export class MailerController {
         <p><strong>Номер телефона:</strong> ${phone}</p>
         <h2>Продукты:</h2>
         <ul style="font-size: 16px">
-            ${products.map(product => `<li>${product.name}: <br>Цена: ${product.price}<br> Количество: ${product.quantity}</li>`).join('')}
+            ${products.map(product => `<li>${product.name}:<br> Количество: ${product.quantity}</li>`).join('')}
         </ul>
-        <h2><strong>Всего</strong> ${total}</h2>`;
+        <h2><strong>Всего:</strong> цену уточняйте у менеджера</h2>`;
 
     await this.mailService.sendMail(email, 'Ваш заказ на rfz.ru принят!', htmlMessage);
     // 'sbut1@rfz.ru'

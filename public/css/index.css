@@ -389,6 +389,7 @@ form *{
 .about-flex-item-long-image img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .logo-scroller-block {
@@ -436,6 +437,10 @@ form *{
     background-image: url("/img/containers.png");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.link p {
+    color: #db4242;
 }
 
 .footer {
@@ -592,7 +597,6 @@ form *{
 
     .about-flex-item-long-image {
         padding: 0;
-        height: auto;
         border: 0;
     }
 

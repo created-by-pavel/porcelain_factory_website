@@ -2,11 +2,6 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class NewOrderDto {
   @ApiProperty({
-    example: '1999',
-    description: 'Total cost',
-  })
-  totalCost: number
-  @ApiProperty({
     example: 'John',
     description: 'Order name',
   })

@@ -1,6 +1,5 @@
 const cartStorage = JSON.parse(localStorage.getItem('products') || '[]');
 let items = document.querySelector('#items');
-let total = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     drawCart();
@@ -8,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function drawCart() {
     items.innerHTML = '';
-    total = 0;
     cartStorage.forEach((product, index) => {
         const newItem = document.createElement('div');
         newItem.classList.add('item');
@@ -24,10 +22,10 @@ function drawCart() {
                                         </div>
                                      </div>
                               </div>
-                              <div class="item-actions">
-                        <div class="delete-button" data-index="${index}">&#x2717;</div>
-                        <div class="move-to-item"><a href="/products/item/${product.id}">перейти &rarr;</div>
-                    </div>`;
+                        <div class="item-actions">
+                            <div class="delete-button" data-index="${index}">&#x2717;</div>
+                            <div class="move-to-item"><a href="/products/item/${product.id}">перейти &rarr;</div>
+                        </div>`;
         items.appendChild(newItem);
     });
 
@@ -52,9 +50,7 @@ function incrementQuantity(event) {
 
     numberSpan.textContent = quantity;
 
-    const product = JSON.parse(cartStorage[index]);
-    product.quantity = quantity;
-    cartStorage[index] = JSON.stringify(product);
+    cartStorage[index].quantity = quantity;
     localStorage.setItem('products', JSON.stringify(cartStorage));
 }
 
@@ -67,26 +63,15 @@ function decrementQuantity(event) {
 
         numberSpan.textContent = quantity;
 
-        const product = JSON.parse(cartStorage[index]);
-        product.quantity = quantity;
-        cartStorage[index] = JSON.stringify(product);
+        cartStorage[index].quantity = quantity;
         localStorage.setItem('products', JSON.stringify(cartStorage));
     }
 }
 
 function deleteItem(event) {
     const index = event.target.getAttribute('data-index');
-    const item = event.target.closest('.item');
-    const quantity = parseInt(item.querySelector('.number').textContent);
-
     cartStorage.splice(index, 1);
     localStorage.setItem('products', JSON.stringify(cartStorage));
 
-    item.remove();
-
-    document.querySelectorAll('.item').forEach((item, i) => {
-        item.querySelector('.delete-button').setAttribute('data-index', i);
-        item.querySelector('.increment-button').setAttribute('data-index', i);
-        item.querySelector('.decrement-button').setAttribute('data-index', i);
-    });
+    drawCart();
 }

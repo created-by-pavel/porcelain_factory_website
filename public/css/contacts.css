@@ -67,9 +67,12 @@ main {
     justify-content: space-between;
     display: flex;
     width: 70%;
-    border-top: 1px solid #000;
     border-bottom: 1px solid #000;
     padding-bottom: 40px;
+}
+
+.right-info {
+    width: 46%;
 }
 
 .info-block {
@@ -98,6 +101,7 @@ form *{
     background-color: white;
     width: 70%;
     padding: 20px;
+    border-bottom: 1px solid #000000;
 }
 
 .inline-group {
@@ -199,7 +203,7 @@ footer {
         margin-left: 0;
     }
 
-    .contacts, .form-container, .map iframe {
+    .contacts, .form-container, .map iframe, .right-info  {
         width: 100%;
     }
 

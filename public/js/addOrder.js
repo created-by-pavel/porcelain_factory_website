@@ -3,14 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const openButtons = document.querySelectorAll('.submit-button, .left-block span');
     const orderForm = document.getElementById('order-form');
     const products = JSON.parse(localStorage.getItem('products') || '[]');
-    console.log(products);
 
     const togglePopupForm = (display) => {
         popupForm.style.display = display;
     };
 
+    const openPopupForm = () => togglePopupForm('block');
+
     openButtons.forEach(button => {
-        button.addEventListener('click', () => togglePopupForm('block'));
+        button.addEventListener('click', openPopupForm);
     });
 
     const closePopup = (event) => {
@@ -39,36 +40,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const validatePhone = (phoneValue) => {
+        const phonePattern = /^\+7\d{10}$/;
+        if (!phonePattern.test(phoneValue)) {
+            window.alert('Номер телефона должен начинаться с +7 и содержать 11 цифр');
+            return false;
+        }
+        return true;
+    };
+
     orderForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
         const formData = new FormData(orderForm);
         const data = Object.fromEntries(formData.entries());
-        data.totalCost = total;
-        let orderId = -1;
+        const phone = data.phone;
+        console.log(phone);
+
+        if (!validatePhone(phone)) {
+            return;
+        }
 
         try {
             data.products = products.map(product => +product.id);
             const orderResult = await sendRequest('/orders/create', data);
-            orderId = orderResult.id;
+            const orderId = orderResult.id;
             console.log('Order created');
 
             data.products = products;
-            const mailResult = await sendRequest('/mail/send/order', data);
+            await sendRequest('/mail/send/order', data);
             console.log('Mail sent');
             alert('Заказ ушел вам на почту');
             togglePopupForm('none');
             localStorage.removeItem('products');
+
+            if (await supertokensSession.doesSessionExist()) {
+                const connectResult = await sendRequest(`/orders/connect/${orderId}`, {});
+                console.log('Connection success:', connectResult);
+            }
         } catch (error) {
             alert('Ошибка при создании заказа');
         }
-
-        if (await supertokensSession.doesSessionExist()) {
-            const connectResult = await sendRequest(`/orders/connect/${orderId}`, {});
-            console.log('Connection success:', connectResult);
-        }
     });
 });
-
-
-// цена, totalcost

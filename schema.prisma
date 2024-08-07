@@ -50,5 +50,4 @@ model Order {
   email     String
   phone     String
   products  Product[] @relation("OrderProduct")
-  totalCost Float     @default(0)
 }
