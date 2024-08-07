@@ -306,7 +306,6 @@ form *{
 }
 
 .catalog-title {
-    position: absolute;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -315,12 +314,17 @@ form *{
 }
 
 .catalog {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: clamp(25px, 0.42rem + 3.52vw, 60px);
-    height: 200px;
     font-family: 'Exo 2';
+}
+
+.catalog-block {
+    display: flex;
+    flex-direction: column;
 }
 
 .catalog-link img {
@@ -439,8 +443,17 @@ form *{
     background-size: cover;
 }
 
+.rent {
+    display: flex;
+    justify-content: center;
+    font-size: clamp(2.188rem, 1.339rem + 4.24vw, 8.125rem);
+    font-family: 'Exo 2';
+    align-items: center;
+    border-top: 1px solid #000000;
+}
+
 .link p {
-    color: #db4242;
+    color: #eb0707;
 }
 
 .footer {
@@ -465,6 +478,8 @@ form *{
     font-size: clamp(1rem, 0.9rem + 0.35vw, 1.58rem);
     border: 1px solid #000000;
 }
+
+
 
 @media screen and (max-width: 1224px) {
     .horizontal_line {
@@ -580,9 +595,13 @@ form *{
     .header {
         padding: 10px 16px;
     }
-    .catalog {
-        height: 200px;
-        border: 1px solid #000000;
+
+    .catalog-block {
+        border-top: 1px solid #000000;
+    }
+
+    .rent {
+        height: 260px;
     }
 
     .catalog-title {

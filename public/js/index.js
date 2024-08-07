@@ -46,6 +46,19 @@ async function chooseAction(e) {
     }
 }
 
+function matchHeight() {
+    const presentationWrapper = document.querySelector('.presentation-wrapper');
+    const rent = document.querySelector('.rent');
+    const catalogBlock = document.querySelector('.catalog-block');
+
+    if (presentationWrapper && rent && catalogBlock) {
+        const height = presentationWrapper.offsetHeight;
+
+        rent.style.height = `${height}px`;
+        catalogBlock.style.height = `${height}px`;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     gsap.from(".title h1", { opacity: 0, y: "3rem", duration: 1.5 });
 
@@ -61,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('click', closePopupOnClickOutside);
     window.addEventListener('touchstart', closePopupOnClickOutside);
+    window.addEventListener('load', matchHeight);
+    window.addEventListener('resize', matchHeight);
 
     arrowDown.addEventListener('click', () => {
         window.scrollBy({
