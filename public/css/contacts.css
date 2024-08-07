@@ -39,7 +39,7 @@ header {
 }
 
 .back-link a {
-    color: #DF5454;
+    color: #eb0707;
     text-decoration: underline;
 }
 
@@ -146,7 +146,7 @@ form *{
 }
 
 .form-group button:hover {
-    color: #DF5454;
+    color: #eb0707;
 }
 
 .map {
